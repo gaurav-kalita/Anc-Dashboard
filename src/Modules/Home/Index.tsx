@@ -133,7 +133,9 @@ export const Home: React.FC = () => {
         return (
           <div className="m-5 max-w-xl mx-auto" key={key}>
             <Card>
-              <div className="bg-ANC-background p-5">{game.game}</div>
+              <div className="text-xl font-bold bg-ANC-background p-5">
+                {game.game}
+              </div>
               {game.teams.map((team: Team) => {
                 const teamName = team.team_name;
                 return (
@@ -144,6 +146,7 @@ export const Home: React.FC = () => {
                     <div className="grid grid-cols-6 gap-4 m-2 hr">
                       <input
                         type="text"
+                        placeholder="Add new player"
                         className="bg-ANC-background rounded col-span-4 p-2"
                         value={editedNames[teamName] ?? ''}
                         onChange={e => handleNameAdd(teamName, e.target.value)}
@@ -151,6 +154,7 @@ export const Home: React.FC = () => {
                       />
                       <input
                         type="number"
+                        placeholder="Age"
                         className="bg-ANC-background rounded col-span-1 p-2"
                         value={editedAges[teamName] ?? ''}
                         onChange={e => handleAgeAdd(teamName, e.target.value)}

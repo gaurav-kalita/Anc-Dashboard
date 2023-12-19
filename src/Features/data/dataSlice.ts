@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { SportsData, Team, Game, Player } from '../../Types';
+import { API_ENDPOINTS } from '../../Constants';
 
 interface DataState {
   data: SportsData | null;
@@ -8,9 +9,7 @@ interface DataState {
 }
 
 export const fetchData = createAsyncThunk('data/fetchData', async () => {
-  const response = await fetch(
-    'https://mocki.io/v1/b4544a37-0765-405f-baf6-6675845d5a0e'
-  );
+  const response = await fetch(API_ENDPOINTS.GAME_INFOS);
   if (!response.ok) {
     throw new Error('Network response was not ok');
   }
