@@ -150,7 +150,6 @@ export const Home: React.FC = () => {
                         className="bg-ANC-background rounded col-span-4 p-2"
                         value={editedNames[teamName] ?? ''}
                         onChange={e => handleNameAdd(teamName, e.target.value)}
-                        onBlur={() => handleAdd(teamName)}
                       />
                       <input
                         type="number"
@@ -158,7 +157,6 @@ export const Home: React.FC = () => {
                         className="bg-ANC-background rounded col-span-1 p-2"
                         value={editedAges[teamName] ?? ''}
                         onChange={e => handleAgeAdd(teamName, e.target.value)}
-                        onBlur={() => handleAdd(teamName)}
                       />
                       <div className="bg-ANC-default_2 hover:bg-ANC-default cursor-pointer text-white font-bold py-2 px-4 rounded">
                         <button onClick={() => handleAdd(teamName)}>
